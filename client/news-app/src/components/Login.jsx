@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 
 class Login extends Component 
 {
@@ -12,6 +13,11 @@ class Login extends Component
                 <button onClick={() => this.props.onRegisterClick()} className="btn btn-info btn-sm ml-2">Register</button>  
                 </div>)
     }
+
+    mapDispatchToProps = (dispatch) => 
+    {
+        return 
+    }
 }
  
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);

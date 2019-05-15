@@ -27,7 +27,6 @@ class App extends Component
     .catch(error => console.log(error))
   }
 
-
   handleTextChange = async (e) =>
   {
       await this.setState({[e.target.name]: e.target.value})
