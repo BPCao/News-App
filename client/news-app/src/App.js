@@ -70,12 +70,12 @@ class App extends Component
   handleBookmark = async (post) =>
   {
     await this.setState({myBookmarks: this.state.myBookmarks.concat(post)})
-    axios.post('http://localhost:8080/bookmarks', {author: post.author,
-                                                title: post.title,
-                                                source: post.source.name,
-                                                published: post.publishedAt})
-    .then(response => console.log(response))
-    .catch(function (error) {console.log(error);});
+    // axios.post('http://localhost:8080/bookmarks', {author: post.author,
+    //                                             title: post.title,
+    //                                             source: post.source.name,
+    //                                             published: post.publishedAt})
+    // .then(response => console.log(response))
+    // .catch(function (error) {console.log(error);});
   }
 
   handleDeleteBookmark = async (bookmark) =>
@@ -106,7 +106,8 @@ class App extends Component
               <Search onTextChange={this.handleTextChange} 
               onSearchClick={this.handleSearchClick}
               onBookmark={this.handleBookmark} 
-              postItems={this.state.postItems} {...props} />} />
+              postItems={this.state.postItems} 
+              {...props} />} />
               <Route path="/bookmarks" render={(props) => 
               <Bookmarks bookmarks={this.state.myBookmarks}
               onDeleteBookmark={this.handleDeleteBookmark}

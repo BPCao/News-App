@@ -30,7 +30,8 @@ app.post ('/login',(req,res) =>
     .then(user => 
     {
         if (user !== null)
-            {res.json({message: 'Login success!'})}
+            {res.json({message: 'Login success!',
+                        user})}
     })
 })
 
